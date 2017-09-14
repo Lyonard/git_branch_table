@@ -1,2 +1,3 @@
-#include this in your ~/.bashrc
-alias gitbranch='php printGitBranch.php'
+#include this in your ~/.bashrc by copying and uncommenting this line
+#source /path/to/git_branch_table/.gitbranch_bash
+alias gitbranch='php /path/to/git_branch_table/printGitBranch.php'
