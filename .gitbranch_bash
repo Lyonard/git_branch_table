@@ -1,0 +1,2 @@
+#include this in your ~/.bashrc
+alias gitbranch='php printGitBranch.php'
