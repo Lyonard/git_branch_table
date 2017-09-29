@@ -25,6 +25,11 @@ foreach ( $branchList as $row ) {
         $branches[ $row ][] = "local";
     } else {
         $row                     = explode( "/", $row );
+
+	if( $row[ 2 ] == "HEAD -> origin"){
+		continue;
+	}
+
         $remote                  = $row[ 1 ];
         $branches[ $row[ 2 ] ][] = $row[ 1 ];
     }
@@ -51,7 +56,7 @@ foreach ( $remotes as $remote ) {
     print_r( $string );
 }
 
-$string = str_pad( "", $num_remotes * ($tabulationCols + 1)  , "-", STR_PAD_RIGHT );
+$string = str_pad( "", $num_remotes * ($tabulationCols + 1)  , "=", STR_PAD_RIGHT );
 echo "\n" . $string . "\n\n";
 
 foreach ( $branches as $bName => $branch ) {
